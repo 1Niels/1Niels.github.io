@@ -2,37 +2,49 @@
 <html>
     <head>
         <title>Niels</title>
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
         <style>
             .center {
                 margin-top: 15%;
-  							font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-							  top: 10px;
-							  left: 0;
-							  position: fixed;
-							  margin-left: 20px;
-							  margin-right: 20px;
-							  right: 0;
-							  z-index: 2;
-							  padding: 0 10px;
+                font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                top: 10px;
+                left: 0;
+                position: fixed;
+                margin-left: 20px;
+                margin-right: 20px;
+                right: 0;
+                z-index: 2;
+                padding: 0 10px;
             }
+            
             .logo {
+                opacity: 1;
+                filter: blur(10px);
                 width: 25%;
                 height: 25%;
                 margin-left: auto;
                 margin-right: auto;
-                
+                animation-name: logo;
+                animation-duration: 1.2s;
+                animation-fill-mode: forwards;
+                animation-timing-function: linear;
+            }
+            
+            @keyframes logo {
+                from{filter: blur(10px);}
+                to {filter: blur(0px);}
             }
             
             .background {
-            	 background-image: url('https://fitt.co/philadelphia/wp-content/uploads/sites/14/2016/01/rowing2.jpg');
- 							 background-size: cover;
-  							display: block;
-  							filter: blur(4px);
-  							-webkit-filter: blur(4px);
-  							height: 800px;
+                background-image: url('https://fitt.co/philadelphia/wp-content/uploads/sites/14/2016/01/rowing2.jpg');
+                background-size: cover;
+                display: block;
+                filter: blur(4px);
+                -webkit-filter: blur(4px);
+                height: 800px;
                 left: 0;
-  							position: fixed;
-  							right: 0;
+                position: fixed;
+                right: 0;
   							
   							
             }

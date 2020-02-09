@@ -2,62 +2,103 @@
 <html>
     <head>
         <title>Niels</title>
-        <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+        
         <style>
-            .center {
-                margin-top: 15%;
-                font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-                top: 10px;
-                left: 0;
-                position: fixed;
-                margin-left: 20px;
-                margin-right: 20px;
-                right: 0;
-                z-index: 2;
-                padding: 0 10px;
+            body {
+                            /* background: #f5a300; */
+            /*                    
+              animation: colorchange 20ms; 
+              -webkit-animation: colorchange 20s;*/
             }
             
-            .logo {
-                opacity: 1;
-                filter: blur(10px);
-                width: 25%;
-                height: 25%;
-                margin-left: auto;
-                margin-right: auto;
-                animation-name: logo;
-                animation-duration: 1.2s;
+            @keyframes colorchange
+            {
+              0%   {background: #f5a300;}
+              25%  {background: #f7af21;}
+              50%  {background: #f7e021;}
+              75%  {background: #ffbb35;}
+              100% {background: #f5a300;}
+            }
+        
+            @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+            {
+              0%   {background: red;}
+              25%  {background: yellow;}
+              50%  {background: blue;}
+              75%  {background: green;}
+              100% {background: red;}
+            }
+            
+            .button {
+                width: 11em;
+                height: 11em;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: red;
+                text-align: center;
+                box-shadow: 0px 0px 50px rgba(0,0,0,0.4);
+                
+                transition: height 1s, width 1s,box-shadow 0.3s ease-in-out;
+                
+            }
+            
+            .button:hover {
+            	width: 13em;
+                height: 13em;
+                box-shadow: 5px 5px 100px #F00000;
+            }
+            
+            
+            .button:active {
+                transition: height .3s, width .3s,box-shadow 0.3s ease-in-out;
+            	width: 9em;
+                height: 9em;
+                box-shadow: 5px 5px 100px #F00000;
+            }
+            
+            
+            .animate {
+                animation-name: Animate-button;
+                animation-duration: 4s;
                 animation-fill-mode: forwards;
-                animation-timing-function: linear;
+                animation-timing-function: ease;
             }
             
-            @keyframes logo {
-                from{filter: blur(10px);}
-                to {filter: blur(0px);}
-            }
             
-            .background {
-                background-image: url('https://fitt.co/philadelphia/wp-content/uploads/sites/14/2016/01/rowing2.jpg');
-                background-size: cover;
-                display: block;
-                filter: blur(4px);
-                -webkit-filter: blur(4px);
-                height: 800px;
-                left: 0;
-                position: fixed;
-                right: 0;
-  							
-  							
+            .animate-reverse {
+                animation-name: Animate-button-reverse;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease;
             }
-            
-      
+        
         </style>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+function randColors(){
+    var r = (Math.round(Math.random()* 127) + 127).toString(16);
+    var g = (Math.round(Math.random()* 127) + 127).toString(16);
+    var b = (Math.round(Math.random()* 127) + 127).toString(16);
+    return '#' + r + g + b;
+}
+
+$(document).ready(function(){
+    $("body").css("background-color", randColors());
+    $(".button").click(function(){
+        //$(".button").addClass("animate");
+    });
+});
+</script>
+        
     </head>
     <body>
-    	<div class="background"></div>
-        <div class="center">
-        <div class="logo">
-        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><style>.cls-1{font-size:121.31px;font-family:Fjalla One; stroke:#FFF; fill: #FFF;}.cls-2{font-size:77.9px;}.cls-3{fill:none;stroke:#FFF;stroke-linecap:square;stroke-miterlimit:10;stroke-width:4.45px;}</style></defs><title>personal</title><text class="cls-1" transform="translate(49.73 150.18)">N<tspan class="cls-2" x="66.75" y="0">t</tspan></text><polyline class="cls-3" points="182.27 131.38 182.27 183.46 132.56 183.46"/><polyline class="cls-3" points="17.73 68.62 17.73 16.54 67.44 16.54"/></svg>
+        <div class="button transform" id="button">
+           
         </div>
-        </div>
+        <div class="test"></div>
     </body>
 </html>

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Niels</title>
@@ -17,8 +17,8 @@ body {
   align-items: center;
 }
 .flip-card-container {
-  width: 300px;
-  height: 400px;
+  width: 700px;
+  height: 500px;
   perspective: 1000px;
 }
 .flip-card {
@@ -58,6 +58,12 @@ body {
   height: 100%;
   /* border-radius: 0.5rem; */
 }
+
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 0.5rem; */
+}
 .flip-card-back p {
   text-align: center;
   margin: 1rem;
@@ -75,7 +81,7 @@ body {
     </head>
     <body>
         <div class="button transform" id="button">
-           
+
         </div>
         <div class="test"></div>
     </body>
@@ -84,13 +90,10 @@ body {
   <div class="flip-card-container">
     <div class="flip-card">
       <div class="flip-card-front">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg" alt="Albert Einstein">
+        <img src="PelotonCard.svg" alt="Peloton">
       </div>
       <div class="flip-card-back">
-        <p>
-          "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe."
-          <span>- Albert Einstein -</span>
-        </p>
+        <img src="FarmGarage.svg" alt="Da Farm">
       </div>
     </div>
   </div>

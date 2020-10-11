@@ -1,5 +1,85 @@
 dragElement(document.getElementById("mydiv"));
 
+// File Tree
+class FileTree {
+  constructor(filename, content, path) {
+    this.filename = filename;
+    this.content = content;
+    this.path = path;
+    this.parent = null;
+    this.descendents = [];
+  }
+
+  lsTerminal() {
+    for (x = 0; x < source.descendents.length; x++) {
+        updateTerminalWindow(source.descendents[x].filename);
+        console.log(source.descendents[x].filename);
+    }
+  }
+
+  rmTerminal(file) {
+    var found = false;
+    for (x = 0; x < source.descendents.length; x++) {
+      if (source.descendents[x].filename == file) {
+        source.descendents.splice(x, x);
+        found = true;
+      }
+    }
+    if (!found) {
+        updateTerminalWindow(`rm: ${file}: No such file or directory`);
+        console.log(`rm: ${file}: No such file or directory`);
+      }
+  }
+
+  cdTerminal(file) {
+    var found = false;
+    for (x = 0; x < source.descendents.length; x++) {
+      if (source.descendents[x].filename == file) {
+        currentDirectory = file;
+        found = true;
+      }
+    }
+    if (!found) {
+      updateTerminalWindow(`cd: no such file or directory: ${file}`)
+      console.log(`cd: no such file or directory: ${file}`)
+    }
+  }
+
+  mkdirTerminal(name) {
+    var exists = false;
+    for (x = 0; x < source.descendents.length; x++) {
+      if (source.descendents[x].filename == name) {
+        exists = true;
+      }
+    }
+    if (!exists) {
+        source.descendents.push(new FileTree(name, null, this.path + name + '/'));
+      }
+    else {
+      updateTerminalWindow(`mkdir: ${name}: File exists`);
+      console.log(`mkdir: ${name}: File exists`);
+    }
+  }
+}
+
+const source = new FileTree('TerminalSiteSource', undefined, '/Users/projects/personal-site/');
+const index = new FileTree('index.html');
+const assets = new FileTree('assets');
+const bootstrap = new FileTree('bootstrap');
+const css = new FileTree('css');
+const js = new FileTree('js');
+
+
+assets.descendents.push(bootstrap, css, js);
+source.descendents.push(index, assets);
+
+for (x = 0; x < source.descendents.length; x++) {
+  console.log(source.descendents[x].filename);
+}
+
+var currentDirectory = source;
+
+
 // Update Login Date
 var loginDate = new Date();
 var dateOptions = { weekday:"short", month:"short", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit"}
@@ -32,6 +112,7 @@ function sleep(milliseconds) {
   }
 }
 
+// Login greeting upon user
 function login() {
     loginWindow = [
   "user@nielsio TerminalWindow % python3 manage.py runserver",
@@ -71,6 +152,12 @@ function clearTerminal() {
     }
 }
 
+// To Implement - cd
+// 
+
+
+
+
 // Take Commands 
 
 function userInput(ele) {
@@ -81,7 +168,8 @@ function userInput(ele) {
 }
 
 function execCommand(userCommand) {
-    switch (userCommand) {
+    input = userCommand.split(" ");
+    switch (input[0]) {
         case "clear":
             clearTerminal();
             break;
@@ -91,6 +179,22 @@ function execCommand(userCommand) {
         case "pwd":
             updateTerminalWindow(`user@Nielsio ~ % ${userCommand}`);
             updateTerminalWindow("/Users/projects/personal-site/playground");
+            break;
+        case "ls":
+            updateTerminalWindow(`user@Nielsio ~ % ${userCommand}`);
+            currentDirectory.lsTerminal();
+            break;
+        case "rm":
+            updateTerminalWindow(`user@Nielsio ~ % ${userCommand}`);
+            currentDirectory.rmTerminal(input[1]);
+            break;
+        case "cd":
+            updateTerminalWindow(`user@Nielsio ~ % ${userCommand}`);
+            currentDirectory.cdTerminal(input[1]);
+            break;
+        case "mkdir":
+            updateTerminalWindow(`user@Nielsio ~ % ${userCommand}`);
+            currentDirectory.mkdirTerminal(input[1]);
             break;
         default:
             updateTerminalWindow(`user@Nielsio ~ % ${userCommand}`);
@@ -102,6 +206,13 @@ function execCommand(userCommand) {
 function updateRow1(newLine) {
     document.getElementById("row-1").innerHTML = newLine;
 }
+
+
+
+
+
+
+// Draggable Termianml Window
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

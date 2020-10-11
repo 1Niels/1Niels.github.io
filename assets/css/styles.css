@@ -1,0 +1,35 @@
+.div-table-row {
+  display: table-row;
+  width: auto;
+  clear: both;
+  height: auto;
+  border-bottom-left-radius: 0px;
+  background: rgb(0,0,0);
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.input-line {
+  float: left;
+  display: table-column;
+  width: 200px;
+}
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+}
+
+#mydivheader {
+  cursor: move;
+  /*z-index: 10;*/
+  /*background-color: #2196F3;*/
+  /*color: #fff;*/
+}
+
+button, input:focus {
+  outline-width: 0;
+  outline: none;
+}
+

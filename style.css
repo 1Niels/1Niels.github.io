@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #FAFAFA;
+  }
+
+  /** Fold styles **/
+  .fold {
+    background-image: url("identity-matrix.svg");
+    height: 75%;
+    background-position: center center;
+  }
+
+  .roasting {
+    margin: 40px auto;
+    padding: 20px 30px 40px 30px;
+    background-color: #FFFFFF;
+    overflow: auto;
+    width: 75%;
+    border-radius: 4px;
+    align-self: center;
+  }
+
+  .roasting p {
+    color: #424242;
+    /* maybe #171717 */
+    text-align: center;
+    line-height: 24px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .spectrum div {
+    font: inherit;
+    padding: 0 20px;
+    overflow: auto;
+    opacity: 0.9;
+  }
+
+  .spectrum p {
+    text-align: left;
+  }
+
+  .column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.dragless {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+
+ .fold .content {
+  margin: auto;
+  width: 66%;
+  padding: 10px;
+}
+
+  .white {
+    background-color: white;
+    color: #171717;
+  }
+
+  /* Typography */
+  .fold .name {
+    padding-top: 2.5em;
+  }
+
+  .fold h1 {
+    color: #171717;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 48px;
+    line-height: 15px;
+    font-weight: bold;
+    text-align: center;
+    top: 20%;
+  }
+
+  .fold h2 {
+    color: #171717;
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: 33px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .fold h5 {
+    color: #171717;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: bold;
+  }
+
+  .fold #student {
+    color: #011F5B;
+  }
+
+  .fold #upenn {
+    color: #990101;
+  }
+
+  .fold p {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: normal;
+    position: relative;
+    color: #171717;
+  }
+
+  .content .right {
+    text-align: right;
+  }
+
+  .fold .icon {
+    padding: 10px;
+    color: #171717;
+  }
+
+  h3 {
+    color: #171717;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  h4 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: .2em;
+  }
+
+  h5 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    line-height: .2em;
+    font-weight: 300;
+  }
+
+  @media only screen and (max-width: 1026px) {
+    h4 {
+        line-height: 1.2em
+    }
+  }
+
+  @media only screen and (max-width: 1026px) {
+    h5 {
+        line-height: 1.2em
+    }
+  }
+
+
+  /* Page elements */
+  ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 75%;
+  }
+
+  li {
+    border-bottom: 1px solid #E4BB97;
+    list-style: none;
+    margin: 100px 0px;
+    padding-bottom: 60px;
+  }
+
+ p {
+    color: #444444;
+    line-height: 32px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+  }
+
+  .below a {
+    color: #214E34;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+
+  .nav {
+    display: block;
+    display: block;
+    border-radius: 4px;
+    align-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+  padding: 10px 30px;
+  background: blue;
+  border: none;
+  border-radius: 0 100px 100px 0;
+}
+
+
+
+/* CSS */
+.button-30 {
+  margin: 0.3em;
+  align-items: center;
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Roboto Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  /* transform: translateY(-2px); */
+}
+
+/* .button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+} */

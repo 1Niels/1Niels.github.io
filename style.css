@@ -177,8 +177,6 @@ body {
     }
   }
 
-
-  /* Page elements */
   ul {
     margin: 0 auto;
     padding: 0;
@@ -229,9 +227,6 @@ body {
   border-radius: 0 100px 100px 0;
 }
 
-
-
-/* CSS */
 .button {
   margin: 0.3em;
   align-items: center;

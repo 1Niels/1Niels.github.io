@@ -2,15 +2,10 @@
 <html>
     <head>
         <title>Niels.io</title>
-        
+
         <style>
             body {
-                            /* background: #f5a300; */
-            /*                    
-              animation: colorchange 20ms; 
-              -webkit-animation: colorchange 20s;*/
-            }
-            
+
             @keyframes colorchange
             {
               0%   {background: #f5a300;}
@@ -19,7 +14,7 @@
               75%  {background: #ffbb35;}
               100% {background: #f5a300;}
             }
-        
+
             @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
             {
               0%   {background: red;}
@@ -28,7 +23,7 @@
               75%  {background: green;}
               100% {background: red;}
             }
-            
+
             .button {
                 width: 11em;
                 height: 11em;
@@ -40,41 +35,41 @@
                 background-color: red;
                 text-align: center;
                 box-shadow: 0px 0px 50px rgba(0,0,0,0.4);
-                
+
                 transition: height 1s, width 1s,box-shadow 0.3s ease-in-out;
-                
+
             }
-            
+
             .button:hover {
             	width: 13em;
                 height: 13em;
                 box-shadow: 5px 5px 100px #F00000;
             }
-            
-            
+
+
             .button:active {
                 transition: height .3s, width .3s,box-shadow 0.3s ease-in-out;
             	width: 9em;
                 height: 9em;
                 box-shadow: 5px 5px 100px #F00000;
             }
-            
-            
+
+
             .animate {
                 animation-name: Animate-button;
                 animation-duration: 4s;
                 animation-fill-mode: forwards;
                 animation-timing-function: ease;
             }
-            
-            
+
+
             .animate-reverse {
                 animation-name: Animate-button-reverse;
                 animation-duration: 3s;
                 animation-fill-mode: forwards;
                 animation-timing-function: ease;
             }
-        
+
         </style>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
@@ -93,11 +88,11 @@ $(document).ready(function(){
     });
 });
 </script>
-        
+
     </head>
     <body>
         <div class="button transform" id="button">
-           
+
         </div>
         <div class="test"></div>
     </body>

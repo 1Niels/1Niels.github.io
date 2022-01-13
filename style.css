@@ -8,6 +8,7 @@ body {
     background: #FAFAFA;
   }
 
+
   /** Fold styles **/
   .fold {
     background-image: url("identity-matrix.svg");

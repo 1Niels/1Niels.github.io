@@ -59,16 +59,14 @@ body {
   clear: both;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 1000px) {
-  .column {
-    width: 100%;
-  }
-  img {
-    display: none;
-  }
+.headshot-mobile {
+  display: none;
 }
 
+.headshot-img {
+  border-radius: 80px;
+  box-shadow: 0 4px 8px rgba(60, 44, 125, 0.4), rgba(45, 35, 66, 0.3) 0 7px 13px -3px, 0 -3px 31px #5e5eb4 inset;
+}
 
 .dragless {
     user-drag: none;
@@ -270,7 +268,30 @@ body {
   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset
 }
 
-/* .button:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
-} */
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+  .column {
+    width: 100%;
+  }
+  .headshot {
+    display: none;
+  }
+  .headshot-mobile {
+    display: block;
+  }
+  .headshot-mobile img {
+    width: 25em;
+    height: 30em;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: 0 4px 8px rgba(60, 44, 125, 0.4), rgba(45, 35, 66, 0.3) 0 7px 13px -3px, 0 -3px 31px #5e5eb4 inset;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content .right {
+    text-align: left;
+  }
+  .mobile-hide {
+    display: none;
+  }
+}
